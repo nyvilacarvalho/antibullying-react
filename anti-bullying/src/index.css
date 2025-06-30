@@ -213,3 +213,18 @@ textarea {
   opacity: 2;
  left: -45px;
  }
+
+
+ .boll-1, .boll-2, .triangle {
+  transition: all 0.8s ease-out;
+  opacity: 0;
+}
+
+.start-left {
+  transform: translateX(-200px);
+}
+
+.start-right {
+  transform: translateX(200px);
+}
+

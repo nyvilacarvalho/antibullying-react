@@ -1,16 +1,40 @@
 import { useState } from 'react'
+import { useEffect, useRef } from 'react';
+
 
 function Formulario() {
   const [count, setCount] = useState(0)
+
+  const boll1Ref = useRef(null);
+const boll2Ref = useRef(null);
+const triangleRef = useRef(null);
+
+useEffect(() => {
+  setTimeout(() => {
+    if (boll1Ref.current) {
+      boll1Ref.current.style.transform = 'translate(0, 0)';
+      boll1Ref.current.style.opacity = '1';
+    }
+    if (boll2Ref.current) {
+      boll2Ref.current.style.transform = 'translate(0, 0)';
+      boll2Ref.current.style.opacity = '1';
+    }
+    if (triangleRef.current) {
+      triangleRef.current.style.transform = 'translate(0, 0)';
+      triangleRef.current.style.opacity = '1';
+    }
+  }, 100);
+}, []);
+
 
   return (
     <>
 
     <div className="container">
 
-      <div className="boll-1"></div>
-      <div className="boll-2"></div>
-      <div className="triangle"></div>
+<div className="boll-1 start-left" ref={boll1Ref}></div>
+<div className="boll-2 start-left" ref={boll2Ref}></div>
+<div className="triangle start-right" ref={triangleRef}></div>
 
 
       <div className="header">
